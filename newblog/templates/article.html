@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+      <br>
+      <div class="blog-post rounded bg-light">
+        <h2 class="blog-post-title">{{story.heading}} {% if user == story.author %}<a href="/edit-article{{ story.id }}"><button class="btn btn-success">Edit</button></a>{% endif %}</h2>
+        <p class="blog-post-meta">{{story.date}} by <a href="#">{{story.name}}</a></p>
+        <br>
+        
+        <p>{{story.article_body|safe}}</p>
+
+        </div><!-- /.blog-post -->
+
+      <nav class="blog-pagination">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+      </nav>
+
+{% endblock %}
+<!-- /.blog-post -->
+
